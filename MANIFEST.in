@@ -1,0 +1,9 @@
+include README.md
+include LICENSE
+include pyproject.toml
+
+recursive-include pretix_listmonk/templates *.html
+recursive-include pretix_listmonk/locale *.po *.mo
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
