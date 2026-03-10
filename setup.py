@@ -28,13 +28,20 @@ setup(
     keywords='pretix plugin listmonk newsletter',
     packages=['pretix_listmonk'],
     include_package_data=True,
+    package_data={
+        'pretix_listmonk': [
+            'templates/pretix_listmonk/*.html',
+            'locale/*/LC_MESSAGES/django.po',
+            'locale/*/LC_MESSAGES/django.mo',
+        ],
+    },
     install_requires=[
         'requests>=2.25.0',
     ],
     python_requires='>=3.8',
     entry_points={
         'pretix.plugin': [
-            'pretix_listmonk = pretix_listmonk:PretixPluginMeta',
+            'pretix_listmonk = pretix_listmonk:ListmonkPluginConfig',
         ],
     },
 )

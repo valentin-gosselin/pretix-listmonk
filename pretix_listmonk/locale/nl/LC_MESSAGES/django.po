@@ -1,0 +1,82 @@
+# pretix-listmonk plugin - Dutch translation
+msgid ""
+msgstr ""
+"Project-Id-Version: pretix-listmonk 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-10 00:00+0000\n"
+"PO-Revision-Date: 2026-03-10 00:00+0000\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgid "Listmonk URL"
+msgstr "Listmonk-URL"
+
+msgid "Base URL of your Listmonk instance, e.g. https://newsletter.example.com"
+msgstr "Basis-URL van uw Listmonk-instantie, bijv. https://newsletter.example.com"
+
+msgid "API username"
+msgstr "API-gebruikersnaam"
+
+msgid "API password / token"
+msgstr "API-wachtwoord / token"
+
+msgid "Newsletter list"
+msgstr "Nieuwsbrieflijst"
+
+msgid "Save URL and credentials first to load available lists"
+msgstr "Sla eerst de URL en inloggegevens op om beschikbare lijsten te laden"
+
+msgid "— Save URL & credentials first —"
+msgstr "— Sla eerst URL en inloggegevens op —"
+
+msgid "Subscribe on"
+msgstr "Abonneren bij"
+
+msgid "Order placed (recommended)"
+msgstr "Bestelling geplaatst (aanbevolen)"
+
+msgid "Payment confirmed"
+msgstr "Betaling bevestigd"
+
+msgid "When to send the subscription to Listmonk"
+msgstr "Wanneer het abonnement naar Listmonk sturen"
+
+msgid "Consent checkbox label"
+msgstr "Label van het toestemmingsvakje"
+
+msgid "Leave empty to use the default text"
+msgstr "Leeg laten om de standaardtekst te gebruiken"
+
+msgid "I would like to subscribe to the newsletter"
+msgstr "Ik wil me inschrijven voor de nieuwsbrief"
+
+msgid "Listmonk Newsletter"
+msgstr "Listmonk Nieuwsbrief"
+
+msgid "Listmonk settings saved."
+msgstr "Listmonk-instellingen opgeslagen."
+
+msgid "Settings saved, but could not connect to Listmonk. Check your URL and credentials."
+msgstr "Instellingen opgeslagen, maar verbinding met Listmonk mislukt. Controleer uw URL en inloggegevens."
+
+msgid "Configure the connection to your Listmonk instance. These settings apply to all events where the Listmonk Newsletter plugin is enabled."
+msgstr "Configureer de verbinding met uw Listmonk-instantie. Deze instellingen gelden voor alle evenementen waarbij de Listmonk Newsletter-plug-in is ingeschakeld."
+
+msgid "Could not connect to Listmonk with the saved credentials. Please check your URL and API credentials."
+msgstr "Kan geen verbinding maken met Listmonk met de opgeslagen inloggegevens. Controleer uw URL en API-inloggegevens."
+
+msgid "Save your URL and credentials first — the newsletter list dropdown will then be populated automatically."
+msgstr "Sla eerst uw URL en inloggegevens op — de keuzelijst voor nieuwsbrieven wordt dan automatisch gevuld."
+
+msgid "Listmonk connection"
+msgstr "Listmonk-verbinding"
+
+msgid "Save"
+msgstr "Opslaan"
+
+msgid "Optional per-event customisation. The Listmonk connection (URL, credentials, list) is configured at the organiser level."
+msgstr "Optionele aanpassing per evenement. De Listmonk-verbinding (URL, inloggegevens, lijst) wordt geconfigureerd op organisatorniveau."

@@ -1,3 +1,3 @@
-from .apps import PretixPluginMeta
+from .apps import ListmonkPluginConfig
 
-__all__ = ['PretixPluginMeta']
+__all__ = ['ListmonkPluginConfig']

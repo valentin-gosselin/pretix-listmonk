@@ -12,19 +12,21 @@ LISTMONK_TIMEOUT = 10  # seconds
 @shared_task(bind=True, max_retries=3, default_retry_delay=60)
 def subscribe_to_listmonk(self, email, name, event_slug, organizer_slug, order_code):
     """Subscribe a user to a Listmonk list. Retries up to 3 times on failure."""
+    from django_scopes import scopes_disabled
     from pretix.base.models import Event, Organizer
 
     try:
-        organizer = Organizer.objects.get(slug=organizer_slug)
-        event = Event.objects.get(slug=event_slug, organizer=organizer)
+        with scopes_disabled():
+            organizer = Organizer.objects.get(slug=organizer_slug)
+            event = Event.objects.get(slug=event_slug, organizer=organizer)
     except Exception as e:
         logger.error('pretix-listmonk: could not load event %s/%s: %s', organizer_slug, event_slug, e)
         return
 
-    base_url = event.settings.get('listmonk_url', '').rstrip('/')
-    api_user = event.settings.get('listmonk_api_user', '')
-    api_password = event.settings.get('listmonk_api_password', '')
-    list_id = event.settings.get('listmonk_list_id', '')
+    base_url = organizer.settings.get('listmonk_url', '').rstrip('/')
+    api_user = organizer.settings.get('listmonk_api_user', '')
+    api_password = organizer.settings.get('listmonk_api_password', '')
+    list_id = organizer.settings.get('listmonk_list_id', '')
 
     if not all([base_url, api_user, api_password, list_id]):
         logger.warning('pretix-listmonk: incomplete configuration for event %s, skipping', event_slug)

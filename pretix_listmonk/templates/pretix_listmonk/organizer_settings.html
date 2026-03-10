@@ -1,0 +1,59 @@
+{% extends "pretixcontrol/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Listmonk Newsletter" %}{% endblock %}
+
+{% block content %}
+<h1>{% trans "Listmonk Newsletter" %}</h1>
+<p class="text-muted">
+    {% blocktrans trimmed %}
+    Configure the connection to your Listmonk instance. These settings apply to all events
+    where the Listmonk Newsletter plugin is enabled.
+    {% endblocktrans %}
+</p>
+
+{% if listmonk_lists_error %}
+<div class="alert alert-warning">
+    <span class="fa fa-exclamation-triangle"></span>
+    {% trans "Could not connect to Listmonk with the saved credentials. Please check your URL and API credentials." %}
+</div>
+{% endif %}
+
+{% if not listmonk_has_credentials %}
+<div class="alert alert-info">
+    <span class="fa fa-info-circle"></span>
+    {% trans "Save your URL and credentials first — the newsletter list dropdown will then be populated automatically." %}
+</div>
+{% endif %}
+
+<form action="" method="post" class="form-horizontal">
+    {% csrf_token %}
+
+    <fieldset>
+        <legend>{% trans "Listmonk connection" %}</legend>
+
+        {% for field in form %}
+        <div class="form-group {% if field.errors %}has-error{% endif %}">
+            <label class="col-md-3 control-label" for="{{ field.id_for_label }}">
+                {{ field.label }}
+            </label>
+            <div class="col-md-9">
+                {{ field }}
+                {% if field.help_text %}
+                    <span class="help-block">{{ field.help_text }}</span>
+                {% endif %}
+                {% for error in field.errors %}
+                    <span class="help-block text-danger">{{ error }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </fieldset>
+
+    <div class="form-group submit-group">
+        <button type="submit" class="btn btn-primary btn-save">
+            {% trans "Save" %}
+        </button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "pretixcontrol/event/settings.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Listmonk Newsletter" %}{% endblock %}
+
+{% block content %}
+<h1>{% trans "Listmonk Newsletter" %}</h1>
+<p class="text-muted">
+    {% blocktrans trimmed %}
+    Optional per-event customisation. The Listmonk connection (URL, credentials, list)
+    is configured at the organiser level.
+    {% endblocktrans %}
+</p>
+
+<form action="" method="post" class="form-horizontal">
+    {% csrf_token %}
+
+    <div class="form-group {% if form.listmonk_checkbox_label.errors %}has-error{% endif %}">
+        <label class="col-md-3 control-label" for="{{ form.listmonk_checkbox_label.id_for_label }}">
+            {{ form.listmonk_checkbox_label.label }}
+        </label>
+        <div class="col-md-9">
+            {{ form.listmonk_checkbox_label }}
+            {% if form.listmonk_checkbox_label.help_text %}
+                <span class="help-block">{{ form.listmonk_checkbox_label.help_text }}</span>
+            {% endif %}
+            {% for error in form.listmonk_checkbox_label.errors %}
+                <span class="help-block text-danger">{{ error }}</span>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="form-group submit-group">
+        <button type="submit" class="btn btn-primary btn-save">
+            {% trans "Save" %}
+        </button>
+    </div>
+</form>
+{% endblock %}

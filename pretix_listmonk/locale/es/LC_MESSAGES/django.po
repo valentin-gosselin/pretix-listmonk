@@ -1,0 +1,82 @@
+# pretix-listmonk plugin - Spanish translation
+msgid ""
+msgstr ""
+"Project-Id-Version: pretix-listmonk 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-10 00:00+0000\n"
+"PO-Revision-Date: 2026-03-10 00:00+0000\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgid "Listmonk URL"
+msgstr "URL de Listmonk"
+
+msgid "Base URL of your Listmonk instance, e.g. https://newsletter.example.com"
+msgstr "URL base de su instancia de Listmonk, p. ej. https://newsletter.example.com"
+
+msgid "API username"
+msgstr "Usuario de la API"
+
+msgid "API password / token"
+msgstr "Contraseña / token de la API"
+
+msgid "Newsletter list"
+msgstr "Lista de boletín"
+
+msgid "Save URL and credentials first to load available lists"
+msgstr "Guarde primero la URL y las credenciales para cargar las listas disponibles"
+
+msgid "— Save URL & credentials first —"
+msgstr "— Guarde primero la URL y las credenciales —"
+
+msgid "Subscribe on"
+msgstr "Suscribir al"
+
+msgid "Order placed (recommended)"
+msgstr "Pedido realizado (recomendado)"
+
+msgid "Payment confirmed"
+msgstr "Pago confirmado"
+
+msgid "When to send the subscription to Listmonk"
+msgstr "Cuándo enviar la suscripción a Listmonk"
+
+msgid "Consent checkbox label"
+msgstr "Texto de la casilla de consentimiento"
+
+msgid "Leave empty to use the default text"
+msgstr "Dejar vacío para usar el texto predeterminado"
+
+msgid "I would like to subscribe to the newsletter"
+msgstr "Me gustaría suscribirme al boletín informativo"
+
+msgid "Listmonk Newsletter"
+msgstr "Boletín Listmonk"
+
+msgid "Listmonk settings saved."
+msgstr "Configuración de Listmonk guardada."
+
+msgid "Settings saved, but could not connect to Listmonk. Check your URL and credentials."
+msgstr "Configuración guardada, pero no se pudo conectar a Listmonk. Verifique la URL y las credenciales."
+
+msgid "Configure the connection to your Listmonk instance. These settings apply to all events where the Listmonk Newsletter plugin is enabled."
+msgstr "Configure la conexión a su instancia de Listmonk. Esta configuración se aplica a todos los eventos donde el plugin Listmonk Newsletter está habilitado."
+
+msgid "Could not connect to Listmonk with the saved credentials. Please check your URL and API credentials."
+msgstr "No se pudo conectar a Listmonk con las credenciales guardadas. Por favor, verifique su URL y credenciales de API."
+
+msgid "Save your URL and credentials first — the newsletter list dropdown will then be populated automatically."
+msgstr "Guarde primero su URL y credenciales — el menú desplegable de listas de boletines se completará automáticamente."
+
+msgid "Listmonk connection"
+msgstr "Conexión a Listmonk"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Optional per-event customisation. The Listmonk connection (URL, credentials, list) is configured at the organiser level."
+msgstr "Personalización opcional por evento. La conexión de Listmonk (URL, credenciales, lista) se configura a nivel de organizador."
