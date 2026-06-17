@@ -42,6 +42,13 @@
                 {% if field.help_text %}
                     <span class="help-block">{{ field.help_text }}</span>
                 {% endif %}
+                {% if field.name == 'listmonk_list_id' and listmonk_has_credentials %}
+                    <span class="help-block">
+                        <a href="?refresh=1" class="btn btn-default btn-xs">
+                            <span class="fa fa-refresh"></span> {% trans "Refresh lists from Listmonk" %}
+                        </a>
+                    </span>
+                {% endif %}
                 {% for error in field.errors %}
                     <span class="help-block text-danger">{{ error }}</span>
                 {% endfor %}

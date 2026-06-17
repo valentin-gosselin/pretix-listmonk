@@ -25,6 +25,7 @@ classifiers = [
 ]
 dependencies = [
     "requests>=2.25.0",
+    "pretix>=4.0.0",
 ]
 
 [project.urls]
