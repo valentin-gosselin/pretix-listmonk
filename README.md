@@ -35,3 +35,10 @@ pip install -e /path/to/pretix-listmonk
 ## License
 
 MIT
+
+## Security
+
+**1.0.0 is affected by a permission bug** — the event settings view did not
+enforce `can_change_event_settings`, so any team member with access to the event
+could change the consent checkbox label. Fixed in 1.0.1; see
+[CHANGELOG.md](CHANGELOG.md). Please upgrade.

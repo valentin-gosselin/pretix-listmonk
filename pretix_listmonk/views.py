@@ -6,7 +6,10 @@ from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import FormView
-from pretix.control.permissions import OrganizerPermissionRequiredMixin
+from pretix.control.permissions import (
+    EventPermissionRequiredMixin,
+    OrganizerPermissionRequiredMixin,
+)
 from pretix.control.views.event import EventSettingsViewMixin
 
 from .forms import ListmonkEventSettingsForm, ListmonkOrganizerSettingsForm
@@ -116,7 +119,13 @@ class ListmonkOrganizerSettingsView(OrganizerPermissionRequiredMixin, FormView):
         })
 
 
-class ListmonkEventSettingsView(EventSettingsViewMixin, FormView):
+class ListmonkEventSettingsView(
+    EventPermissionRequiredMixin, EventSettingsViewMixin, FormView
+):
+    # EventSettingsViewMixin only adds a context variable; it does NOT enforce
+    # any permission. Without EventPermissionRequiredMixin, `permission` below
+    # is inert and any team member with access to the event could read and
+    # change these settings.
     form_class = ListmonkEventSettingsForm
     template_name = 'pretix_listmonk/event_settings.html'
     permission = 'can_change_event_settings'

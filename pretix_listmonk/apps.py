@@ -12,7 +12,7 @@ class ListmonkPluginConfig(PluginConfig):
     class PretixPluginMeta:
         name = _('Listmonk Newsletter')
         author = 'Valentin Gosselin'
-        version = '1.0.0'
+        version = '1.0.1'
         description = _('Subscribe attendees to a Listmonk newsletter list at checkout')
         category = 'INTEGRATION'
         compatibility = 'pretix>=4.0.0'
