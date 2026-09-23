@@ -2,7 +2,6 @@ import logging
 
 import requests
 from celery import shared_task
-from django.conf import settings as django_settings
 
 logger = logging.getLogger(__name__)
 
@@ -18,7 +17,8 @@ def subscribe_to_listmonk(self, email, name, event_slug, organizer_slug, order_c
     try:
         with scopes_disabled():
             organizer = Organizer.objects.get(slug=organizer_slug)
-            event = Event.objects.get(slug=event_slug, organizer=organizer)
+            # Existence check only: the credentials live on the organizer.
+            Event.objects.get(slug=event_slug, organizer=organizer)
     except Exception as e:
         logger.error('pretix-listmonk: could not load event %s/%s: %s', organizer_slug, event_slug, e)
         return
